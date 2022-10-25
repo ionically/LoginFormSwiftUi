@@ -18,7 +18,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color.blue
+                Color.red
                     .ignoresSafeArea()
                 Circle()
                     .scale(1.7)
@@ -28,7 +28,7 @@ struct ContentView: View {
                     .foregroundColor(.white)
 
                 VStack {
-                    Text("Login")
+                    Text("Sign In")
                         .font(.largeTitle)
                         .bold()
                         .padding()
@@ -36,7 +36,7 @@ struct ContentView: View {
                     TextField("Username", text: $username)
                         .padding()
                         .frame(width: 300, height: 50)
-                        .background(Color.black.opacity(0.05))
+                        .background(Color.purple.opacity(0.05))
                         .cornerRadius(10)
                         .border(.red, width: CGFloat(wrongUsername))
                         
@@ -44,7 +44,7 @@ struct ContentView: View {
                     SecureField("Password", text: $password)
                         .padding()
                         .frame(width: 300, height: 50)
-                        .background(Color.black.opacity(0.05))
+                        .background(Color.purple.opacity(0.05))
                         .cornerRadius(10)
                         .border(.red, width: CGFloat(wrongPassword))
                     
