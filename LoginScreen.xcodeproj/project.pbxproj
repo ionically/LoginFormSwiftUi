@@ -14,6 +14,7 @@
 		CA9DA71C290A813100D66EFA /* login-api-failure.json in Resources */ = {isa = PBXBuildFile; fileRef = CA9DA71B290A813100D66EFA /* login-api-failure.json */; };
 		CAF63BD3290A1A9400755996 /* login-api-success.json in Resources */ = {isa = PBXBuildFile; fileRef = CAF63BD2290A1A9400755996 /* login-api-success.json */; };
 		CAF63BD6290A1B5100755996 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF63BD5290A1B5100755996 /* LoginViewModel.swift */; };
+		F8B8F8C7290A6CAC00F40835 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B8F8C6290A6CAC00F40835 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,8 @@
 		CA9DA71B290A813100D66EFA /* login-api-failure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "login-api-failure.json"; sourceTree = "<group>"; };
 		CAF63BD2290A1A9400755996 /* login-api-success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "login-api-success.json"; sourceTree = "<group>"; };
 		CAF63BD5290A1B5100755996 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		F8B8F8C6290A6CAC00F40835 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		F8B8F8C8290A6CBC00F40835 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,7 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+
 		CAF63BCE290A196200755996 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +95,7 @@
 			path = Json;
 			sourceTree = "<group>";
 		};
+
 		CAF63BD4290A1B4300755996 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
 				7AC7CB58273FEDCF0058A2E8 /* LoginView.swift in Sources */,
 				7AC7CB56273FEDCF0058A2E8 /* LoginScreenApp.swift in Sources */,
 				CAF63BD6290A1B5100755996 /* LoginViewModel.swift in Sources */,
