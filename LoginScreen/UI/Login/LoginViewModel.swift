@@ -28,7 +28,8 @@ public class LoginViewModel: ObservableObject {
     @Published var showingLoginScreen: Bool = false
     @Published var displayMessage: String = ""
     @Published var footerMessage: String = ""
-    public func authenticateUser() {
+    
+    public func callLogin() {
         let loginReponse = getLoginResponse()
         if loginReponse?.Token?.isEmpty == false {
             self.showingLoginScreen = true
@@ -36,7 +37,7 @@ public class LoginViewModel: ObservableObject {
         }
     }
     
-    public func forgotpassword() {
+    public func callForgotPassword() {
         let response = getForgotPasswordResponse()
         if response?.status == "success" {
             showForgetPasswordMessage()
