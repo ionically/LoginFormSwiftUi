@@ -71,11 +71,11 @@ struct LoginView: View {
                         viewmodel.callFindMe()
                     }
                     .foregroundColor(.white)
-                    .frame(width: 200, height: 100)
+                    .frame(width: 200, height: 50)
                     .background(Color.purple)
                     .cornerRadius(10)
                     
-                    Text (viewmodel.footerMessage)
+                    Text (viewmodel.Message)
                         .font(.largeTitle)
                         .bold()
                         .padding()

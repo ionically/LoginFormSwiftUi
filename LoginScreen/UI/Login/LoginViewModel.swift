@@ -53,8 +53,8 @@ public class LoginViewModel: ObservableObject {
     
     public func callFindMe() {
         let response = getFindMeResponse()
-        if response?.status == "Finding" {
-            showFindMe()
+        if response?.status == "success" {
+            showFindMeMessage()
         }
     
     }
@@ -114,13 +114,23 @@ public class LoginViewModel: ObservableObject {
         return nil
     }
     
+    func parseFindMe(jsonData: Data) -> FindMeResponse? {
+        do {
+            let decodedData = try JSONDecoder().decode(FindMeResponse.self, from: jsonData)
+            return decodedData
+        } catch {
+            print("decode error")
+        }
+        return nil
+    }
+    
     func showMessage() {
         displayMessage = "You are logged in @" + loginForm.username + " nice to meet you"
     }
     func   showForgetPasswordMessage() {
         footerMessage = "email has been sent to your email id"
     }
-    func showFindMe() {
+    func showFindMeMessage() {
         Message = "We are sending more information for finding the details "
     }
 }
