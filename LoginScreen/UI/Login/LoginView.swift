@@ -54,7 +54,7 @@ struct LoginView: View {
                     .background(Color.blue)
                     .cornerRadius(10)
                     
-                    NavigationLink(destination: Text("You are logged in @\(viewmodel.loginForm.username)"),
+                    NavigationLink(destination: Text("You are logged in @\(viewmodel.loginForm.username) \(viewmodel.displayMessage)"),
                                    isActive: $viewmodel.showingLoginScreen) {
                         EmptyView()
                     }

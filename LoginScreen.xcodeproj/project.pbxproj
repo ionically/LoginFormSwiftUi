@@ -58,7 +58,6 @@
 			isa = PBXGroup;
 			children = (
 				CAF63BD1290A1A3800755996 /* Json */,
-				CAF63BD0290A19AE00755996 /* API */,
 				CAF63BCE290A196200755996 /* UI */,
 				7AC7CB59273FEDD00058A2E8 /* Assets.xcassets */,
 				7AC7CB5B273FEDD00058A2E8 /* Preview Content */,
@@ -81,13 +80,6 @@
 				7AC7CB55273FEDCF0058A2E8 /* LoginScreenApp.swift */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		CAF63BD0290A19AE00755996 /* API */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = API;
 			sourceTree = "<group>";
 		};
 		CAF63BD1290A1A3800755996 /* Json */ = {

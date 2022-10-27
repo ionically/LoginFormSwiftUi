@@ -13,24 +13,26 @@ struct LoginFormState {
 }
 
 struct LoginResponse: Codable {
-    let Token: String?
+    let Token: String? 
     let message: String?
     let display_msg: String?
 }
 
 public class LoginViewModel: ObservableObject {
     @Published var loginForm = LoginFormState(username: "", password: "")
-    @Published var showingLoginScreen = false
+    @Published var showingLoginScreen: Bool = false
+    @Published var displayMessage: String = ""
     
     public func authenticateUser() {
         let loginReponse = getLoginResponse()
         if loginReponse?.Token?.isEmpty == false {
             self.showingLoginScreen = true
+            showMessage()
         }
     }
     
     func getLoginResponse() -> LoginResponse? {
-        if let file = readLocalFile(forName: "login-api-response"), let response = parse(jsonData: file) {
+        if let file = readLocalFile(forName: "login-api-success"), let response = parse(jsonData: file) {
             return response
         }
         return nil
@@ -57,6 +59,10 @@ public class LoginViewModel: ObservableObject {
             print("decode error")
         }
         return nil
+    }
+    
+    func showMessage() {
+        displayMessage = "Nice to meet you"
     }
     
 }
