@@ -8,7 +8,11 @@
 import Foundation
 
 public class LoginViewModel: ObservableObject {
+    @Published var loginForm = LoginFormState(username: "", password: "")
     
+    public func authenticateUser() {
+        
+    }
 }
 
 struct LoginFormState {
