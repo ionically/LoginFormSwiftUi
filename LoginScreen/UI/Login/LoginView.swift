@@ -12,7 +12,6 @@ struct LoginView: View {
     
     @State private var wrongUsername: Float = 0
     @State private var wrongPassword: Float  = 0
-    @State private var showingLoginScreen = false
     
     var body: some View {
         NavigationView {
@@ -56,7 +55,7 @@ struct LoginView: View {
                     .cornerRadius(10)
                     
                     NavigationLink(destination: Text("You are logged in @\(viewmodel.loginForm.username)"),
-                                   isActive: $showingLoginScreen) {
+                                   isActive: $viewmodel.showingLoginScreen) {
                         EmptyView()
                     }
                 }

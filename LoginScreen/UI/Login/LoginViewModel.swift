@@ -20,12 +20,12 @@ struct LoginResponse: Codable {
 
 public class LoginViewModel: ObservableObject {
     @Published var loginForm = LoginFormState(username: "", password: "")
-    @Published var navigate = false
+    @Published var showingLoginScreen = false
     
     public func authenticateUser() {
         let loginReponse = getLoginResponse()
         if loginReponse?.Token?.isEmpty == false {
-            self.navigate = true
+            self.showingLoginScreen = true
         }
     }
     
