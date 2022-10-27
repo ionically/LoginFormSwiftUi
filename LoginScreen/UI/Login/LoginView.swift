@@ -7,13 +7,11 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    @State private var username = ""
-    @State private var password = ""
+struct LoginView: View {
+    @ObservedObject private(set) var viewmodel: LoginViewModel
+    
     @State private var wrongUsername: Float = 0
     @State private var wrongPassword: Float  = 0
-    @State private var showingLoginScreen = false
-    
     
     var body: some View {
         NavigationView {
@@ -33,7 +31,7 @@ struct ContentView: View {
                         .bold()
                         .padding()
                     
-                    TextField("Username", text: $username)
+                    TextField("Username", text: $viewmodel.loginForm.username)
                         .padding()
                         .frame(width: 300, height: 50)
                         .background(Color.purple.opacity(0.05))
@@ -41,7 +39,7 @@ struct ContentView: View {
                         .border(.red, width: CGFloat(wrongUsername))
                         
                     
-                    SecureField("Password", text: $password)
+                    SecureField("Password", text: $viewmodel.loginForm.password)
                         .padding()
                         .frame(width: 300, height: 50)
                         .background(Color.purple.opacity(0.05))
@@ -49,38 +47,26 @@ struct ContentView: View {
                         .border(.red, width: CGFloat(wrongPassword))
                     
                     Button("Login") {
-                        authenticateUser(username: username, password: password)
-                        }
+                        viewmodel.authenticateUser()
+                    }
                     .foregroundColor(.white)
                     .frame(width: 300, height: 50)
                     .background(Color.blue)
                     .cornerRadius(10)
                     
-                    NavigationLink(destination: Text("You are logged in @\(username)"), isActive: $showingLoginScreen) {
+                    NavigationLink(destination: Text("\(viewmodel.displayMessage)"),
+                                   isActive: $viewmodel.showingLoginScreen) {
                         EmptyView()
                     }
                 }
             }.navigationBarHidden(true)
         }
     }
-    
-    func authenticateUser(username: String, password: String) {
-        if username.lowercased() == "mario2021" {
-            wrongUsername = 0
-            if password.lowercased() == "abc123" {
-                wrongPassword = 0
-                showingLoginScreen = true
-            } else {
-                wrongPassword = 2
-            }
-        } else {
-            wrongUsername = 2
-        }
-    }
+   
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        LoginView(viewmodel: .init())
     }
 }
