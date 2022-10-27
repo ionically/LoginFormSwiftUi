@@ -7,13 +7,12 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    @State private var username = ""
-    @State private var password = ""
+struct LoginView: View {
+    @ObservedObject private(set) var viewModel: LoginViewModel
+    
     @State private var wrongUsername: Float = 0
     @State private var wrongPassword: Float  = 0
     @State private var showingLoginScreen = false
-    
     
     var body: some View {
         NavigationView {
@@ -81,6 +80,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        LoginView()
     }
 }

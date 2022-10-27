@@ -8,17 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		7AC7CB56273FEDCF0058A2E8 /* LoginScreenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC7CB55273FEDCF0058A2E8 /* LoginScreenApp.swift */; };
-		7AC7CB58273FEDCF0058A2E8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC7CB57273FEDCF0058A2E8 /* ContentView.swift */; };
+		7AC7CB58273FEDCF0058A2E8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC7CB57273FEDCF0058A2E8 /* LoginView.swift */; };
 		7AC7CB5A273FEDD00058A2E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AC7CB59273FEDD00058A2E8 /* Assets.xcassets */; };
 		7AC7CB5D273FEDD00058A2E8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AC7CB5C273FEDD00058A2E8 /* Preview Assets.xcassets */; };
+		CAF63BD3290A1A9400755996 /* login-api-response.json in Resources */ = {isa = PBXBuildFile; fileRef = CAF63BD2290A1A9400755996 /* login-api-response.json */; };
+		CAF63BD6290A1B5100755996 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF63BD5290A1B5100755996 /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7AC7CB52273FEDCF0058A2E8 /* LoginScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AC7CB55273FEDCF0058A2E8 /* LoginScreenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenApp.swift; sourceTree = "<group>"; };
-		7AC7CB57273FEDCF0058A2E8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7AC7CB57273FEDCF0058A2E8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		7AC7CB59273FEDD00058A2E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7AC7CB5C273FEDD00058A2E8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CAF63BD2290A1A9400755996 /* login-api-response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "login-api-response.json"; sourceTree = "<group>"; };
+		CAF63BD5290A1B5100755996 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +55,9 @@
 		7AC7CB54273FEDCF0058A2E8 /* LoginScreen */ = {
 			isa = PBXGroup;
 			children = (
-				7AC7CB55273FEDCF0058A2E8 /* LoginScreenApp.swift */,
-				7AC7CB57273FEDCF0058A2E8 /* ContentView.swift */,
+				CAF63BD1290A1A3800755996 /* Json */,
+				CAF63BD0290A19AE00755996 /* API */,
+				CAF63BCE290A196200755996 /* UI */,
 				7AC7CB59273FEDD00058A2E8 /* Assets.xcassets */,
 				7AC7CB5B273FEDD00058A2E8 /* Preview Content */,
 			);
@@ -65,6 +70,39 @@
 				7AC7CB5C273FEDD00058A2E8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CAF63BCE290A196200755996 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				CAF63BD4290A1B4300755996 /* Login */,
+				7AC7CB55273FEDCF0058A2E8 /* LoginScreenApp.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		CAF63BD0290A19AE00755996 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		CAF63BD1290A1A3800755996 /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				CAF63BD2290A1A9400755996 /* login-api-response.json */,
+			);
+			path = Json;
+			sourceTree = "<group>";
+		};
+		CAF63BD4290A1B4300755996 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				7AC7CB57273FEDCF0058A2E8 /* LoginView.swift */,
+				CAF63BD5290A1B5100755996 /* LoginViewModel.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +163,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAF63BD3290A1A9400755996 /* login-api-response.json in Resources */,
 				7AC7CB5D273FEDD00058A2E8 /* Preview Assets.xcassets in Resources */,
 				7AC7CB5A273FEDD00058A2E8 /* Assets.xcassets in Resources */,
 			);
@@ -137,8 +176,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AC7CB58273FEDCF0058A2E8 /* ContentView.swift in Sources */,
+				7AC7CB58273FEDCF0058A2E8 /* LoginView.swift in Sources */,
 				7AC7CB56273FEDCF0058A2E8 /* LoginScreenApp.swift in Sources */,
+				CAF63BD6290A1B5100755996 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
