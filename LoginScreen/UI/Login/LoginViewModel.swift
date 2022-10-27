@@ -44,12 +44,13 @@ public class LoginViewModel: ObservableObject {
         
     }
     func getForgotPasswordResponse() -> ForgotPasswordResponse? {
+
         if let file = readLocalFile(forName: "forgotpassword"), let response = parseForgotPassword(jsonData: file) {
             return response
         }
         return nil
     }
-    
+
     func getLoginResponse() -> LoginResponse? {
         if let file = readLocalFile(forName: "login-api-success"), let response = parseLogin(jsonData: file) {
             return response
