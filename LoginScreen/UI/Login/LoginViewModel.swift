@@ -17,12 +17,17 @@ struct LoginResponse: Codable {
     let message: String?
     let display_msg: String?
 }
+struct ForgotPasswordResponse: Codable {
+    let message: String?
+    let status: String?
+}
+    
 
 public class LoginViewModel: ObservableObject {
     @Published var loginForm = LoginFormState(username: "", password: "")
     @Published var showingLoginScreen: Bool = false
     @Published var displayMessage: String = ""
-    
+    @Published var footerMessage: String = ""
     public func authenticateUser() {
         let loginReponse = getLoginResponse()
         if loginReponse?.Token?.isEmpty == false {
@@ -31,6 +36,19 @@ public class LoginViewModel: ObservableObject {
         }
     }
     
+    public func forgotpassword() {
+        let response = getForgotPasswordResponse()
+        if response?.status == "success" {
+            showForgetPasswordMessage()
+        }
+        
+    }
+    func getForgotPasswordResponse() -> ForgotPasswordResponse? {
+        if let file = readLocalFile(forName: "forgotpassword"), let response = parse(jsonData: file) {
+            return response
+        }
+        return nil
+    }
     func getLoginResponse() -> LoginResponse? {
         if let file = readLocalFile(forName: "login-api-success"), let response = parse(jsonData: file) {
             return response
@@ -64,5 +82,7 @@ public class LoginViewModel: ObservableObject {
     func showMessage() {
         displayMessage = "You are logged in @" + loginForm.username + " nice to meet you"
     }
-    
+    func   showForgetPasswordMessage() {
+        footerMessage = "email has been sent to your email id"
+    }
 }
