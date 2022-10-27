@@ -44,13 +44,14 @@ public class LoginViewModel: ObservableObject {
         
     }
     func getForgotPasswordResponse() -> ForgotPasswordResponse? {
-        if let file = readLocalFile(forName: "forgotpassword"), let response = parse(jsonData: file) {
+        if let file = readLocalFile(forName: "forgotpassword"), let response = parseForgotPassword(jsonData: file) {
             return response
         }
         return nil
     }
+    
     func getLoginResponse() -> LoginResponse? {
-        if let file = readLocalFile(forName: "login-api-success"), let response = parse(jsonData: file) {
+        if let file = readLocalFile(forName: "login-api-success"), let response = parseLogin(jsonData: file) {
             return response
         }
         return nil
@@ -69,9 +70,19 @@ public class LoginViewModel: ObservableObject {
         return nil
     }
    
-    func parse(jsonData: Data) -> LoginResponse? {
+    func parseLogin(jsonData: Data) -> LoginResponse? {
         do {
             let decodedData = try JSONDecoder().decode(LoginResponse.self, from: jsonData)
+            return decodedData
+        } catch {
+            print("decode error")
+        }
+        return nil
+    }
+    
+    func parseForgotPassword(jsonData: Data) -> ForgotPasswordResponse? {
+        do {
+            let decodedData = try JSONDecoder().decode(ForgotPasswordResponse.self, from: jsonData)
             return decodedData
         } catch {
             print("decode error")
