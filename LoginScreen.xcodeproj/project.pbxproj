@@ -11,7 +11,8 @@
 		7AC7CB58273FEDCF0058A2E8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC7CB57273FEDCF0058A2E8 /* LoginView.swift */; };
 		7AC7CB5A273FEDD00058A2E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AC7CB59273FEDD00058A2E8 /* Assets.xcassets */; };
 		7AC7CB5D273FEDD00058A2E8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AC7CB5C273FEDD00058A2E8 /* Preview Assets.xcassets */; };
-		CAF63BD3290A1A9400755996 /* login-api-response.json in Resources */ = {isa = PBXBuildFile; fileRef = CAF63BD2290A1A9400755996 /* login-api-response.json */; };
+		CA9DA71C290A813100D66EFA /* login-api-failure.json in Resources */ = {isa = PBXBuildFile; fileRef = CA9DA71B290A813100D66EFA /* login-api-failure.json */; };
+		CAF63BD3290A1A9400755996 /* login-api-success.json in Resources */ = {isa = PBXBuildFile; fileRef = CAF63BD2290A1A9400755996 /* login-api-success.json */; };
 		CAF63BD6290A1B5100755996 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF63BD5290A1B5100755996 /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -21,7 +22,8 @@
 		7AC7CB57273FEDCF0058A2E8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		7AC7CB59273FEDD00058A2E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7AC7CB5C273FEDD00058A2E8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		CAF63BD2290A1A9400755996 /* login-api-response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "login-api-response.json"; sourceTree = "<group>"; };
+		CA9DA71B290A813100D66EFA /* login-api-failure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "login-api-failure.json"; sourceTree = "<group>"; };
+		CAF63BD2290A1A9400755996 /* login-api-success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "login-api-success.json"; sourceTree = "<group>"; };
 		CAF63BD5290A1B5100755996 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,7 +93,8 @@
 		CAF63BD1290A1A3800755996 /* Json */ = {
 			isa = PBXGroup;
 			children = (
-				CAF63BD2290A1A9400755996 /* login-api-response.json */,
+				CA9DA71B290A813100D66EFA /* login-api-failure.json */,
+				CAF63BD2290A1A9400755996 /* login-api-success.json */,
 			);
 			path = Json;
 			sourceTree = "<group>";
@@ -163,9 +166,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAF63BD3290A1A9400755996 /* login-api-response.json in Resources */,
+				CAF63BD3290A1A9400755996 /* login-api-success.json in Resources */,
 				7AC7CB5D273FEDD00058A2E8 /* Preview Assets.xcassets in Resources */,
 				7AC7CB5A273FEDD00058A2E8 /* Assets.xcassets in Resources */,
+				CA9DA71C290A813100D66EFA /* login-api-failure.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
