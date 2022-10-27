@@ -22,12 +22,19 @@ struct ForgotPasswordResponse: Codable {
     let status: String?
 }
     
+struct FindMeResponse: Codable {
+    let message: String?
+    let status: String?
+}
+    
 
 public class LoginViewModel: ObservableObject {
     @Published var loginForm = LoginFormState(username: "", password: "")
     @Published var showingLoginScreen: Bool = false
     @Published var displayMessage: String = ""
     @Published var footerMessage: String = ""
+    @Published var Message: String = ""
+    
     
     public func callLogin() {
         let loginReponse = getLoginResponse()
@@ -42,8 +49,16 @@ public class LoginViewModel: ObservableObject {
         if response?.status == "success" {
             showForgetPasswordMessage()
         }
-        
     }
+    
+    public func callFindMe() {
+        let response = getFindMeResponse()
+        if response?.status == "Finding" {
+            showFindMe()
+        }
+    
+    }
+    
     func getForgotPasswordResponse() -> ForgotPasswordResponse? {
 
         if let file = readLocalFile(forName: "forgotpassword"), let response = parseForgotPassword(jsonData: file) {
@@ -59,6 +74,13 @@ public class LoginViewModel: ObservableObject {
         return nil
     }
     
+    func getFindMeResponse() -> FindMeResponse? {
+
+        if let file = readLocalFile(forName: "findme"), let response = parseFindMe(jsonData: file) {
+            return response
+        }
+        return nil
+    }
     func readLocalFile(forName name: String) -> Data? {
         do {
             if let bundlePath = Bundle.main.path(forResource: name, ofType: "json"),
@@ -97,5 +119,8 @@ public class LoginViewModel: ObservableObject {
     }
     func   showForgetPasswordMessage() {
         footerMessage = "email has been sent to your email id"
+    }
+    func showFindMe() {
+        Message = "We are sending more information for finding the details "
     }
 }

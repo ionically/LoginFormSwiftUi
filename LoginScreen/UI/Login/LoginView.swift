@@ -67,6 +67,19 @@ struct LoginView: View {
                         .bold()
                         .padding()
                     
+                    Button("Find me") {
+                        viewmodel.callFindMe()
+                    }
+                    .foregroundColor(.white)
+                    .frame(width: 200, height: 100)
+                    .background(Color.purple)
+                    .cornerRadius(10)
+                    
+                    Text (viewmodel.footerMessage)
+                        .font(.largeTitle)
+                        .bold()
+                        .padding()
+                    
                     NavigationLink(destination: Text("\(viewmodel.displayMessage)"),
                                    isActive: $viewmodel.showingLoginScreen) {
                         EmptyView()
