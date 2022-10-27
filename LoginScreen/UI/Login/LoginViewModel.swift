@@ -62,7 +62,7 @@ public class LoginViewModel: ObservableObject {
     }
     
     func showMessage() {
-        displayMessage = "Nice to meet you"
+        displayMessage = "You are logged in @" + loginForm.username + " nice to meet you"
     }
     
 }

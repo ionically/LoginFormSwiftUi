@@ -1,6 +1,3 @@
 {
-  "Token": null,
-  "data": {
-    "message": "unable to login"
-  }
+    "message": "forget password email has been sent"
 }
